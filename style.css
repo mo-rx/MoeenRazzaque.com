@@ -1,0 +1,350 @@
+
+normalize.css
+
+:root {
+    font-size: 16px;
+    color: rgb(238, 238, 238);
+    --text-secondary:#03989e;
+    background-color: #181818;
+    --bg-secondary: #03989e;
+    --transition-speed: 200ms
+}
+
+@font-face { /*Perfograma*/
+    font-family: Perfograma;
+    src: url("Perfograma-Regular.ttf") format("truetype");
+}
+
+@font-face { /*Lulo*/
+    font-family: Lulo;
+    src: url("Lulo.otf") format("opentype");
+}
+
+@font-face { /*MuseoSlab*/
+    font-family: 'MuseoSlab';
+    src: url('Museo_Slab_500_2-webfont.woff2') format('woff2'),
+         url('Museo_Slab_500_2-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { /*MuseoSans*/
+    font-family: 'MuseoSans';
+    src: url('MuseoSans_500-webfont.woff2') format('woff2'),
+         url('MuseoSans_500-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*NAVIGATION BAR*/
+
+.navbar {
+    position: fixed;
+    background-color: #181818;
+    transition: width 200ms ease;
+    font-family: 'MuseoSlab', serif;
+    z-index: 9999;
+}
+
+.navbar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    font-size: 1.2rem;
+    letter-spacing: 0.15ch;
+}
+
+.navbar-button {
+    width: 100%;
+}
+
+.navbar-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: rgb(238, 238, 238);
+    filter: opacity(100);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(.68);
+    transition: 200ms;
+}
+
+.link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.logo-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.navbar-link svg {
+    min-width: 2rem;
+    margin: 1.5rem;
+}
+
+.nav-image {
+    color: #03989e;
+    transition: 200ms;
+}
+
+.navbar-link:hover {
+    width: 14rem;
+    filter: grayscale(0%) opacity(1);
+}
+
+.navbar:hover .link-text{
+    display: block;
+}
+
+.navbar:hover .logo-text{
+    display: block;
+}
+
+.navbar-button:last-child {
+    margin-top: auto;
+  }
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #03989e;
+    font-size: 1.8rem;
+    letter-spacing: 0.2ch;
+    width: 100%;
+}
+
+
+.logo svg {
+    transform: rotate(0deg);
+    transition: 200ms;
+}
+
+.navbar:hover .logo svg {
+    transform: rotate(-180deg);
+}
+
+@media only screen and (max-width: 600px) { /*small screens */
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .navbar-list {
+        flex-direction: row;
+    }
+
+    .navbar-link {
+        justify-content: center;
+    }
+
+    main {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 600px) { /* Large screens */
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navbar:hover {
+        width: 16rem;
+    }
+
+    .navbar:hover .link-text {
+        display: inline;
+    }
+
+    .navbar:hover .logo-text {
+        display: inline;
+    }
+
+    .navbar:hover .logo-text
+    {
+        left: 0px;
+    }
+}
+
+.dark {
+--text-primary: #b6b6b6;
+--text-secondary: #ececec;
+--bg-primary: #23232e;
+--bg-secondary: #141418;
+}
+
+.light {
+--text-primary: #1f1f1f;
+--text-secondary: #000000;
+--bg-primary: #ffffff;
+--bg-secondary: #e4e4e4;
+}
+
+.solar {
+--text-primary: #576e75;
+--text-secondary: #35535c;
+--bg-primary: #fdf6e3;
+--bg-secondary: #f5e5b8;
+}
+
+.theme-icon {
+display: none;
+}
+
+.dark #darkIcon {
+display: block;
+}
+
+.light #lightIcon {
+display: block;
+}
+
+.solar #solarIcon {
+display: block;
+}
+
+/* HEADER */
+
+.header {
+    margin-left: 5rem;
+    background-color: #03989e;
+    background-image: url("Starry Sky.jpg");
+    color: whitesmoke;
+    font-size: 10rem;
+    height: 100vh;
+    background-position: bottom;
+    background-size: cover;
+    font-family: MuseoSlab, serif;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+
+.header-text {
+    margin-left: 1rem;
+    margin-right: 0;
+    padding-right: 0;
+    margin-bottom: 0px;
+    -webkit-animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+@-webkit-keyframes slide-in-left {
+0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+}
+100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+}
+}
+@keyframes slide-in-left {
+0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+}
+100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+}
+}
+  
+
+.wordCarousel {
+    font-size: 5rem;
+    font-weight: 100;
+    display: flex;
+    font-family: Lulo, serif;
+    /*color: #ccc;*/
+    color: #03989e;
+    font-weight: 100;
+    margin-left: 0;
+    margin-top: 0px;
+    -webkit-animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.wordCarousel div {
+    overflow: hidden;
+    position: relative;
+    height:100px;
+    padding-top: 10px;
+    margin-top: -10px;
+}
+
+.wordCarousel li {
+    padding: 0px;
+    height: 45px;
+    font-weight: 900;
+    margin-bottom: 90px;
+    display: block;
+}
+
+.flip5 { animation: flip5 12s cubic-bezier(0.20, 1, 0.40, 1.2) infinite; }
+
+@keyframes flip5 {
+    0% { margin-top: -660px; }
+    11% { margin-top: -540px; }
+    22% { margin-top: -540px; }
+    33% { margin-top: -408px; }
+    44% { margin-top: -408px; }
+    55% { margin-top: -270px; }
+    66% { margin-top: -270px; }
+    77% { margin-top: -140px; }
+    84% { margin-top: -140px; }
+    99.99% { margin-top: 0px; }
+    100% { margin-top: -660px; }
+}
+
+/*BODY */
+
+body {
+    margin:0px; 
+    padding:0px;
+    font-family: 'MuseoSans', sans-serif;
+    color: #181818);
+    background-color: rgb(238, 238, 238);
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    width: 0.25rem;
+    background: #181818;
+}
+
+body::-webkit-scrollbar-thumb {
+    width: 0.25rem;
+    background: #03989e;
+}
+
+main {
+    margin-left: 6rem;
+    margin-right: 1rem;
+    padding: 0rem;
+}
+
