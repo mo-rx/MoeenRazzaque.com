@@ -4,37 +4,7 @@ normalize.css
 :root {
     font-size: 16px;
     color: rgb(238, 238, 238);
-    --text-secondary:#03989e;
     background-color: #181818;
-    --bg-secondary: #03989e;
-    --transition-speed: 200ms
-}
-
-@font-face { /*Perfograma*/
-    font-family: Perfograma;
-    src: url("Perfograma-Regular.ttf") format("truetype");
-}
-
-@font-face { /*Lulo*/
-    font-family: Lulo;
-    src: url("Lulo.otf") format("opentype");
-}
-
-@font-face { /*MuseoSlab*/
-    font-family: 'MuseoSlab';
-    src: url('Museo_Slab_500_2-webfont.woff2') format('woff2'),
-         url('Museo_Slab_500_2-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face { /*MuseoSans*/
-    font-family: 'MuseoSans';
-    src: url('MuseoSans_500-webfont.woff2') format('woff2'),
-         url('MuseoSans_500-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
 }
 
 /*NAVIGATION BAR*/
@@ -99,14 +69,6 @@ normalize.css
     filter: grayscale(0%) opacity(1);
 }
 
-.navbar:hover .link-text{
-    display: block;
-}
-
-.navbar:hover .logo-text{
-    display: block;
-}
-
 .navbar-button:last-child {
     margin-top: auto;
   }
@@ -131,7 +93,7 @@ normalize.css
     transform: rotate(-180deg);
 }
 
-@media only screen and (max-width: 600px) { /*small screens */
+@media only screen and (max-width: 900px) { /*small screens */
     .navbar {
         bottom: 0;
         width: 100vw;
@@ -139,6 +101,10 @@ normalize.css
     }
 
     .logo {
+        display: none;
+    }
+
+    .link-text {
         display: none;
     }
 
@@ -155,7 +121,7 @@ normalize.css
     }
 }
 
-@media only screen and (min-width: 600px) { /* Large screens */
+@media only screen and (min-width: 900px) { /* Large screens */
     .navbar {
         top: 0;
         width: 5rem;
@@ -178,154 +144,32 @@ normalize.css
     {
         left: 0px;
     }
+
+    .navbar:hover .link-text{
+        display: block;
+    }
+
+    .navbar:hover .logo-text{
+        display: block;
+    }
 }
 
-.dark {
---text-primary: #b6b6b6;
---text-secondary: #ececec;
---bg-primary: #23232e;
---bg-secondary: #141418;
-}
-
-.light {
---text-primary: #1f1f1f;
---text-secondary: #000000;
---bg-primary: #ffffff;
---bg-secondary: #e4e4e4;
-}
-
-.solar {
---text-primary: #576e75;
---text-secondary: #35535c;
---bg-primary: #fdf6e3;
---bg-secondary: #f5e5b8;
-}
-
-.theme-icon {
-display: none;
-}
-
-.dark #darkIcon {
-display: block;
-}
-
-.light #lightIcon {
-display: block;
-}
-
-.solar #solarIcon {
-display: block;
-}
 
 /* HEADER */
 
-.header {
-    margin-left: 5rem;
-    background-color: #03989e;
-    background-image: url("Starry Sky.jpg");
-    color: whitesmoke;
-    font-size: 10rem;
-    height: 100vh;
-    background-position: bottom;
-    background-size: cover;
-    font-family: MuseoSlab, serif;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-}
 
+/*can be found as inline css*/
 
-.header-text {
-    margin-left: 1rem;
-    margin-right: 0;
-    padding-right: 0;
-    margin-bottom: 0px;
-    -webkit-animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-            animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-
-@-webkit-keyframes slide-in-left {
-0% {
-    -webkit-transform: translateX(-1000px);
-            transform: translateX(-1000px);
-    opacity: 0;
-}
-100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-}
-}
-@keyframes slide-in-left {
-0% {
-    -webkit-transform: translateX(-1000px);
-            transform: translateX(-1000px);
-    opacity: 0;
-}
-100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-}
-}
-  
-
-.wordCarousel {
-    font-size: 5rem;
-    font-weight: 100;
-    display: flex;
-    font-family: Lulo, serif;
-    /*color: #ccc;*/
-    color: #03989e;
-    font-weight: 100;
-    margin-left: 0;
-    margin-top: 0px;
-    -webkit-animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-            animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-.wordCarousel div {
-    overflow: hidden;
-    position: relative;
-    height:100px;
-    padding-top: 10px;
-    margin-top: -10px;
-}
-
-.wordCarousel li {
-    padding: 0px;
-    height: 45px;
-    font-weight: 900;
-    margin-bottom: 90px;
-    display: block;
-}
-
-.flip5 { animation: flip5 12s cubic-bezier(0.20, 1, 0.40, 1.2) infinite; }
-
-@keyframes flip5 {
-    0% { margin-top: -660px; }
-    11% { margin-top: -540px; }
-    22% { margin-top: -540px; }
-    33% { margin-top: -408px; }
-    44% { margin-top: -408px; }
-    55% { margin-top: -270px; }
-    66% { margin-top: -270px; }
-    77% { margin-top: -140px; }
-    84% { margin-top: -140px; }
-    99.99% { margin-top: 0px; }
-    100% { margin-top: -660px; }
-}
 
 /*BODY */
 
+
 body {
-    margin:0px; 
+    margin:0px;
     padding:0px;
     font-family: 'MuseoSans', sans-serif;
-    color: #181818);
-    background-color: rgb(238, 238, 238);
+    color: #181818;
+    background-color: rgb(218, 218, 218);
 }
 
 body::-webkit-scrollbar {
@@ -342,9 +186,123 @@ body::-webkit-scrollbar-thumb {
     background: #03989e;
 }
 
-main {
-    margin-left: 6rem;
-    margin-right: 1rem;
-    padding: 0rem;
+h1 {
+    font-family: "MuseoSlab";
+    letter-spacing: 2px;
+    text-align: left;
 }
 
+p {
+    font-size: 24px;
+    font: "MuseoSans";
+    text-align: left;
+}
+
+sup {
+    font-size: .9rem;
+}
+
+@media only screen and (max-width: 900px) { /*small screens*/
+
+    main {
+        margin-left: 5vw;
+        margin-right: 3vw;
+        margin-bottom: 6rem;
+        padding: 0rem;
+    }
+
+    .socialmedia {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .socialmedia svg {
+        width: 10vw;
+        height: 10vw;
+    }
+
+}
+
+@media only screen and (min-width: 900px) { /*Large screens)*/
+
+    main {
+        margin-left: 8rem;
+        margin-right: 3rem;
+        padding: 0rem;
+    }
+
+    .socialmedia {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .socialmedia svg {
+        width: 80px;
+        height: 80px;
+        padding-right: 40px;
+    }
+
+}
+
+h2, p {
+    margin-bottom: 2.4rem;
+}
+
+h1 {
+    font: 700 2.8rem/1.2 "MuseoSans";
+    color: hsl(258, 26%, 30%)/*hsl(200, 40%, 20%)*/;
+
+}
+
+h2 {
+    font: 400 2.0rem/1.2 "MuseoSlab";
+    color: hsl(260, 25%, 85%);
+}
+
+h3 {
+    font: 800 1.5rem/1.2 "MuseoSans";
+    color: hsl(0, 0%, 28%);
+}
+
+time {
+    font: 800 1.0rem/1.2 "MuseoSans";
+    color: hsl(258, 25%, 50%);
+}
+
+p {
+    font: 400 1.2rem/1.5 "MuseoSans";
+    color: hsl(0, 0%, 28%);
+}
+
+main a {
+    box-shadow: inset 0 -0.12em hsl(182, 96%, 32%);
+    text-decoration: none;
+    color: inherit;
+}
+
+.face {
+    /*display: none;*/
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    background-image: "Starry Sky.jpg";
+}
+
+.special-p {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.socialmedia-link {
+    box-shadow: none;
+}
+
+hr {
+    height: 3px;
+    background-color: hsl(258, 26%, 50%);
+    border: none;
+}
